@@ -20,7 +20,7 @@ class SplashScreenViewController: UIViewController {
                     self.navigateToMainScreen(with: universities)
                     
                 }
-            case .failure(let error):
+            case .failure(_):
                 DispatchQueue.main.async {
                     self.showError(message: "Üniversite verilerini çekerken hata ile karşılaşıldı")
                 }

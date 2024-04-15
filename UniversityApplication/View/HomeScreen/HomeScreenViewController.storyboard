@@ -25,9 +25,8 @@
                                 <rect key="frame" x="0.0" y="404" width="393" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ptt-h8-41U">
-                                <rect key="frame" x="320" y="720" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ptt-h8-41U">
+                                <rect key="frame" x="320" y="735.66666666666663" width="50" height="34.333333333333371"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled">
                                     <imageReference key="image" image="mount.fill" catalog="system" symbolScale="large"/>
@@ -41,6 +40,8 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="9hN-Uj-TSJ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="KwH-Vu-aEt"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ptt-h8-41U" secondAttribute="trailing" constant="23" id="NHP-2s-7Xe"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="ptt-h8-41U" secondAttribute="bottom" constant="48" id="QyC-Yy-Ypg"/>
                             <constraint firstItem="9hN-Uj-TSJ" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="RKi-IO-cvA"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="9hN-Uj-TSJ" secondAttribute="bottom" id="cLv-0X-t28"/>
                             <constraint firstItem="9hN-Uj-TSJ" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="xmh-tp-iF0"/>

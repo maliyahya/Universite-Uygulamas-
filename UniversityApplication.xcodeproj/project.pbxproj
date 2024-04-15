@@ -185,6 +185,7 @@
 		24C258572BBEC9CE00CD5E0F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				24C2585E2BBECC0E00CD5E0F /* Cells */,
 				241EF5A82BC97EE2002EED54 /* WebViewScreen */,
 				24C2589F2BBFE23900CD5E0F /* FavoritesScreen */,
 				24C258592BBEC9DC00CD5E0F /* HomeScreen */,
@@ -205,7 +206,6 @@
 		24C258592BBEC9DC00CD5E0F /* HomeScreen */ = {
 			isa = PBXGroup;
 			children = (
-				24C2585E2BBECC0E00CD5E0F /* Cells */,
 				24C258552BBEC9C100CD5E0F /* HomeScreenViewController.storyboard */,
 				24C2585A2BBEC9FF00CD5E0F /* HomeScreenViewController.swift */,
 			);
