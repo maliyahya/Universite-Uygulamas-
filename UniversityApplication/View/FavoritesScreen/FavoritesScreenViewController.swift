@@ -43,9 +43,17 @@ class FavoritesScreenViewController: UIViewController {
 
 extension FavoritesScreenViewController:UITableViewDelegate,UITableViewDataSource,FavoritesTableViewCellDelegate{
     func didTapNumber(UniversityPhoneNumber number: String) {
-        print(number)
-    }
-    
+            if let phoneURL = URL(string: "tel://\(number)") {
+                       UIApplication.shared.open(phoneURL, options: [:]) { success in
+                           if success {
+                               print("Phone call initiated successfully")
+                           } else {
+                               print("Failed to initiate phone call")
+                           }
+                       }
+                   } else {
+                       print("Invalid phone number or URL")
+                   }  }
     func didTapWebsite(forUniversityWithWebsite url: String,webTitle:String) {
             if let vc = UIStoryboard(name: "WebViewViewController", bundle: nil).instantiateViewController(withIdentifier: "WebViewViewController") as? WebViewViewController {
                 vc.webSiteUrl=url

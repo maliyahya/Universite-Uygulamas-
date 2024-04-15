@@ -151,8 +151,17 @@ extension HomeScreenViewController: UITableViewDelegate, UITableViewDataSource {
 }
 extension HomeScreenViewController: CitiesTableViewCellDelegate {
     func didTapNumberButton(withNumber number: String) {
-        print(number)
-    }
+        if let phoneURL = URL(string: "tel://\(number)") {
+                   UIApplication.shared.open(phoneURL, options: [:]) { success in
+                       if success {
+                           print("Phone call initiated successfully")
+                       } else {
+                           print("Failed to initiate phone call")
+                       }
+                   }
+               } else {
+                   print("Invalid phone number or URL")
+               }  }
     
     func didTapWebsiteButton(withURL urlString: String, webTitle: String) {
         if let vc = UIStoryboard(name: "WebViewViewController", bundle: nil).instantiateViewController(withIdentifier: "WebViewViewController") as? WebViewViewController {
