@@ -14,7 +14,6 @@ class FavoritesScreenViewController: UIViewController {
     private var viewModel = FavoriteScreenViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
-        title="Favorilerim"
         prepareTable()
         getFavorites()
     }
@@ -61,9 +60,6 @@ extension FavoritesScreenViewController:UITableViewDelegate,UITableViewDataSourc
                 navigationController?.pushViewController(vc, animated: true)
             }
     }
-
-  
-    
     func favoriteStatusDidChange(forUniversityWithName name: String) {
         getFavorites()
         tableView.reloadData()
@@ -96,11 +92,12 @@ extension FavoritesScreenViewController:UITableViewDelegate,UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        //Data yoksa seçilememesini sağlayan kod bloğu
         if let selectedUniversity = viewModel.favorites?[indexPath.row],
            selectedUniversity.adress == "-" && selectedUniversity.email == "-" && selectedUniversity.fax == "-" && selectedUniversity.phone == "-"  && selectedUniversity.rector == "-" && selectedUniversity.website == "-" {
                return
            }
-
+        
         if viewModel.selectedRowIndex == indexPath.row {
             viewModel.selectedRowIndex = nil
             if let cell = tableView.cellForRow(at: indexPath) as? FavoritesTableViewCell {
@@ -112,8 +109,17 @@ extension FavoritesScreenViewController:UITableViewDelegate,UITableViewDataSourc
                 cell.isExpanded = true
             }
         }
-        tableView.beginUpdates()
-        tableView.endUpdates()
+        tableView.reloadData()
+        
+        //Seçilen celle  göre ekranın kaydırılmasını sağlayan fonksiyonumuz
+        if let selectedCell = tableView.cellForRow(at: indexPath) {
+                let yOffset = selectedCell.frame.origin.y - 200
+                if yOffset > 0 {
+                    tableView.setContentOffset(CGPoint(x: 0, y: yOffset), animated: true)
+                } else {
+                    tableView.setContentOffset(CGPoint(x: 0, y: -tableView.contentInset.top), animated: true)
+                }
+            }
     }
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         if let cell = tableView.cellForRow(at: indexPath) as? FavoritesTableViewCell {

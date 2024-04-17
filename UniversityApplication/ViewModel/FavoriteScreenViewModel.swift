@@ -11,6 +11,4 @@ import Foundation
 class FavoriteScreenViewModel:ObservableObject{
      @Published  var selectedRowIndex: Int?
      @Published  var favorites:[UniversityModel]?
-
-
 }

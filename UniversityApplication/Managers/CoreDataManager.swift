@@ -5,7 +5,6 @@
 //  Created by Muhammet Ali Yahyaoğlu on 5.04.2024.
 //
 
-import Foundation
 
 
 
@@ -72,7 +71,6 @@ class CoreDataManager{
         }
         return nil
     }
-
     func deleteExample(byName name: String) {
         let context = persistentContainer.viewContext
         if let example = fetchExample(withName: name) {
@@ -87,13 +85,6 @@ class CoreDataManager{
             print("No example found with the name '\(name)'")
         }
     }
- 
- 
- 
-
-
-
-    
 }
 
 

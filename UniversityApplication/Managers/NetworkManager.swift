@@ -10,6 +10,8 @@ import Foundation
 class NetworkManager{
     static let shared=NetworkManager()
     private init(){}
+    
+    // Network requestini oluşturma fonksiyonumuz 
     private func createRequest(url:URL?,
                                type:HTTPMethod,
                                completion:@escaping (URLRequest)->Void
@@ -21,6 +23,7 @@ class NetworkManager{
         request.httpMethod=type.rawValue
         completion(request)
     }
+    
     func getUniversityList(pageNumber:Int,completion: @escaping (Result<AllUniversitiesModel, Error>) -> Void ) {
         NetworkManager.shared.createRequest(url: URL(string: AppURLs.baseURL + "page-\(pageNumber).json"), type: .GET) { baseRequest in
             let task = URLSession.shared.dataTask(with: baseRequest) { data, response, error in

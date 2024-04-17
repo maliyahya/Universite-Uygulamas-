@@ -19,7 +19,6 @@
 		241EF5B42BC98ECD002EED54 /* Extesions+University.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241EF5B32BC98ECD002EED54 /* Extesions+University.swift */; };
 		24C258302BBEC80600CD5E0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C2582F2BBEC80600CD5E0F /* AppDelegate.swift */; };
 		24C258322BBEC80600CD5E0F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C258312BBEC80600CD5E0F /* SceneDelegate.swift */; };
-		24C258342BBEC80600CD5E0F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C258332BBEC80600CD5E0F /* ViewController.swift */; };
 		24C258372BBEC80600CD5E0F /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 24C258362BBEC80600CD5E0F /* Base */; };
 		24C2583A2BBEC80600CD5E0F /* UniversityModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 24C258382BBEC80600CD5E0F /* UniversityModel.xcdatamodeld */; };
 		24C2583C2BBEC80800CD5E0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24C2583B2BBEC80800CD5E0F /* Assets.xcassets */; };
@@ -54,7 +53,6 @@
 		24C2582C2BBEC80600CD5E0F /* UniversityApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UniversityApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24C2582F2BBEC80600CD5E0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24C258312BBEC80600CD5E0F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		24C258332BBEC80600CD5E0F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		24C258362BBEC80600CD5E0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		24C258392BBEC80600CD5E0F /* UniversityApplication.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UniversityApplication.xcdatamodel; sourceTree = "<group>"; };
 		24C2583B2BBEC80800CD5E0F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -130,7 +128,6 @@
 				24C258482BBEC8C400CD5E0F /* Managers */,
 				24C2582F2BBEC80600CD5E0F /* AppDelegate.swift */,
 				24C258312BBEC80600CD5E0F /* SceneDelegate.swift */,
-				24C258332BBEC80600CD5E0F /* ViewController.swift */,
 				24C258352BBEC80600CD5E0F /* Main.storyboard */,
 				241EF5A42BC970B2002EED54 /* Info.plist */,
 				24C2583B2BBEC80800CD5E0F /* Assets.xcassets */,
@@ -325,7 +322,6 @@
 				24C2584A2BBEC8CD00CD5E0F /* NetworkManager.swift in Sources */,
 				24C258692BBECD1200CD5E0F /* HomeScreenViewModel.swift in Sources */,
 				24C2583A2BBEC80600CD5E0F /* UniversityModel.xcdatamodeld in Sources */,
-				24C258342BBEC80600CD5E0F /* ViewController.swift in Sources */,
 				24C258302BBEC80600CD5E0F /* AppDelegate.swift in Sources */,
 				24C2584F2BBEC8F400CD5E0F /* Enums.swift in Sources */,
 				24C258472BBEC87400CD5E0F /* SplashScreenViewController.swift in Sources */,

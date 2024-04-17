@@ -5,9 +5,9 @@ protocol UniversityTableViewCellDelegate: AnyObject {
     func didTapNumberButton(withNumber number:String)
 }
 class UniversityTableViewCell: UITableViewCell {
+    weak var delegate: UniversityTableViewCellDelegate?
     @IBOutlet weak var websiteLabel: UILabel!
     @IBOutlet weak var numberLabel: UILabel!
-    weak var delegate: UniversityTableViewCellDelegate?
     @IBOutlet weak var faxLabel: UILabel!
     @IBOutlet weak var plusImageView: UIImageView!
     @IBOutlet weak var universitiesLabel: UILabel!
@@ -15,8 +15,8 @@ class UniversityTableViewCell: UITableViewCell {
     @IBOutlet weak var addFavoriteImageView: UIImageView!
     @IBOutlet weak var rectorLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
-    var universityInfos:University?
-    var selectedRowIndex: Int?
+    private var universityInfos:University?
+    private var selectedRowIndex: Int?
     var isExpanded: Bool = false {
           didSet {
               plusImageView.image = isExpanded ? UIImage(systemName: "minus") : UIImage(systemName: "plus")
@@ -75,12 +75,18 @@ class UniversityTableViewCell: UITableViewCell {
             addFavoriteImageView.image = UIImage(systemName: "heart.fill")
         }
     }
+    
+    // Üniversitemizin belirtilen koşullara uygun datasının olup olmamasına göre + butonunun gizliliğini kontrol ediyor
+    
     private func hasInfo(){
         if  universityInfos?.adress == "-" && universityInfos?.email == "-" && universityInfos?.fax == "-" && universityInfos?.phone == "-"  && universityInfos?.rector == "-" && universityInfos?.website == "-"{
                 plusImageView.isHidden = true
             } else {
                 plusImageView.isHidden = false
             }    }
+    
+    
+    // Üniversitemizin favoriler listemizde olup olmadığını kontrol edip iconunu ayarlar
     
     func isFavorite(){
         if CoreDataManager.shared.fetchExample(withName: universityInfos?.name ?? "") != nil {
@@ -89,6 +95,9 @@ class UniversityTableViewCell: UITableViewCell {
                addFavoriteImageView.image = UIImage(systemName: "heart")
            }
     }
+    
+    // Labellarımıza key-value şeklinde textini atama işlemini yapan fonksiyonumuz
+    
     private func setKeyValueText(key: String, value: String,label:UILabel) {
           let attributedString = NSMutableAttributedString(string: "\(key): \(value)")
           attributedString.addAttribute(.foregroundColor, value: UIColor.black, range: NSRange(location: 0, length: key.count + 1))

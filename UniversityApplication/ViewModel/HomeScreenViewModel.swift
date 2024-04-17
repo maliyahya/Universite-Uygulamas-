@@ -12,7 +12,10 @@ class HomeScreenViewModel:ObservableObject {
     @Published var pageNumber=1
     @Published var selectedRowIndex: Int?
     @Published var isFetchingData = false
-
+    
+    
+    //Splash screende aldığımız veriyi viewModelimize set etme fonksiyonumuz
+    
     func setUniversities(_ universities: [UniversityData]) {
            self.universities = universities
        }

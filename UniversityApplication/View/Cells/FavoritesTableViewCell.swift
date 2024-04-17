@@ -15,16 +15,16 @@ protocol FavoritesTableViewCellDelegate: AnyObject {
 
 
 class FavoritesTableViewCell: UITableViewCell {
-    @IBOutlet weak var numberLabel: UILabel!
     weak var delegate: FavoritesTableViewCellDelegate?
+    @IBOutlet weak var numberLabel: UILabel!
     @IBOutlet weak var plusImageView: UIImageView!
     @IBOutlet weak var universityName: UILabel!
     @IBOutlet weak var favoriteImageView: UIImageView!
     @IBOutlet weak var websiteLabel: UILabel!
-    private var universityInfos:UniversityModel?
     @IBOutlet weak var rectorLabel: UILabel!
     @IBOutlet weak var adressLabel: UILabel!
     @IBOutlet weak var faxLabel: UILabel!
+    private var universityInfos:UniversityModel?
     var isExpanded: Bool = false {
           didSet {
               plusImageView.image = isExpanded ? UIImage(systemName: "minus") : UIImage(systemName: "plus")
@@ -50,6 +50,8 @@ class FavoritesTableViewCell: UITableViewCell {
         hasInfo()
 
     }
+    
+    // Üniversitemizin belirtilen koşullara uygun datasının olup olmamasına göre + butonunun gizliliğini kontrol ediyor
     private func hasInfo(){
         if  universityInfos?.adress == "-" && universityInfos?.email == "-" && universityInfos?.fax == "-" && universityInfos?.phone == "-"  && universityInfos?.rector == "-" && universityInfos?.website == "-"{
                 plusImageView.isHidden = true
@@ -84,6 +86,9 @@ class FavoritesTableViewCell: UITableViewCell {
         if let number = universityInfos?.phone{
             delegate?.didTapNumber(UniversityPhoneNumber: number.formatPhoneForCall) }
     }
+    
+    // Labellarımıza key-value şeklinde textini atama işlemini yapan fonksiyonumuz
+
     func setKeyValueText(key: String, value: String,label:UILabel) {
           let attributedString = NSMutableAttributedString(string: "\(key): \(value)")
           attributedString.addAttribute(.foregroundColor, value: UIColor.black, range: NSRange(location: 0, length: key.count + 1))

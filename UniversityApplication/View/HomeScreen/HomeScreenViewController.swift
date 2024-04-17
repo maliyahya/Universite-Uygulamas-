@@ -9,22 +9,26 @@ import UIKit
 
 
 class HomeScreenViewController: UIViewController {
-     var viewModel=HomeScreenViewModel()
     @IBOutlet weak var expandButton: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var favoritesButton: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
+    var viewModel=HomeScreenViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         activityIndicator.isHidden=true
         prepareTable()
         prepareFavoritesButton()
-        NotificationCenter.default.addObserver(self, selector: #selector(updateTable), name: NSNotification.Name("UpdateTable"), object: nil)
+        prepareObserver()
+        
     }
     @objc func updateTable() {
          tableView.reloadData()
      }
+    private func prepareObserver(){
+        NotificationCenter.default.addObserver(self, selector: #selector(updateTable), name: NSNotification.Name("UpdateTable"), object: nil)
+    }
     @IBAction func didTapExpand(_ sender: Any) {
         for indexPath in tableView.indexPathsForVisibleRows ?? [] {
             if let cell = tableView.cellForRow(at: indexPath) as? CitiesTableViewCell {
@@ -44,9 +48,8 @@ class HomeScreenViewController: UIViewController {
     }
     private func prepareFavoritesButton(){
         favoritesButton.target = self
-                favoritesButton.action = #selector(favoritesButtonTapped)
+        favoritesButton.action = #selector(favoritesButtonTapped)
     }
-    
     @objc func favoritesButtonTapped() {
         if let vc = UIStoryboard(name: "FavoritesScreenViewController", bundle: nil).instantiateViewController(withIdentifier: "FavoritesScreenViewController") as? FavoritesScreenViewController {
             navigationController?.pushViewController(vc, animated: true)
@@ -75,6 +78,9 @@ class HomeScreenViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Tamam", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
     }
+    
+    //Sayfa sonuna geldiğimizde sıradaki sayfanın verilerini çekip tableımıza ekleyen fonksiyonumuz
+    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offsetY = scrollView.contentOffset.y
         let contentHeight = scrollView.contentSize.height
@@ -102,7 +108,7 @@ class HomeScreenViewController: UIViewController {
         }
     }
 }
-extension HomeScreenViewController: UITableViewDelegate, UITableViewDataSource {
+extension HomeScreenViewController: UITableViewDelegate, UITableViewDataSource,CitiesTableViewCellDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.universities?.count ?? 0
     }
@@ -126,7 +132,6 @@ extension HomeScreenViewController: UITableViewDelegate, UITableViewDataSource {
           }    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         if let universitiesCount = viewModel.universities?[indexPath.row].universities.count, universitiesCount == 0 {
             return
         }
@@ -136,10 +141,18 @@ extension HomeScreenViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             viewModel.selectedRowIndex = indexPath.row
         }
+        
         tableView.reloadData()
+        
+        if let selectedCell = tableView.cellForRow(at: indexPath) {
+                let yOffset = selectedCell.frame.origin.y - 200
+                if yOffset > 0 {
+                    tableView.setContentOffset(CGPoint(x: 0, y: yOffset), animated: true)
+                } else {
+                    tableView.setContentOffset(CGPoint(x: 0, y: -tableView.contentInset.top), animated: true)
+                }
+            }
     }
-}
-extension HomeScreenViewController: CitiesTableViewCellDelegate {
     func didTapNumberButton(withNumber number: String) {
         if let phoneURL = URL(string: "tel://\(number)") {
                    UIApplication.shared.open(phoneURL, options: [:]) { success in
@@ -160,9 +173,8 @@ extension HomeScreenViewController: CitiesTableViewCellDelegate {
             navigationController?.pushViewController(vc, animated: true)
         }
     }
-    
-  
 }
+
 
 
 

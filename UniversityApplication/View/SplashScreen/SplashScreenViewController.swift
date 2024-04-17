@@ -12,6 +12,10 @@ class SplashScreenViewController: UIViewController {
         super.viewDidLoad()
         fetchUniversityList()
     }
+    
+
+    
+    
     func fetchUniversityList() {
         NetworkManager.shared.getUniversityList(pageNumber: 1) { result in
             switch result {

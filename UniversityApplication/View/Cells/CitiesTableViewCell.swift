@@ -16,16 +16,16 @@ class CitiesTableViewCell: UITableViewCell {
     @IBOutlet weak var plusImageView: UIImageView!
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var universityTableView: UITableView!
-    var university:UniversityData?
-    private var url=""
-    private var webTitle=""
+    private var university:UniversityData?
+    private var url:String?
+    private var webTitle:String?
     private var universityCount: Int = 0
+    private var selectedRowIndex: Int?
     var isExpanded: Bool = false {
           didSet {
               plusImageView.image = isExpanded ? UIImage(systemName: "minus") : UIImage(systemName: "plus")
           }
       }
-    var selectedRowIndex: Int?
     override func awakeFromNib() {
         super.awakeFromNib()
         prepareTable()
@@ -35,12 +35,17 @@ class CitiesTableViewCell: UITableViewCell {
         universityTableView.dataSource = self
         universityTableView.register(UINib(nibName: "UniversityTableViewCell", bundle: nil), forCellReuseIdentifier: "UniversityTableViewCell")
     }
+    
+    //Şehrimizin üniversiteye sahip olup olmamasına göre + butonunun görünümünü kontrol eden fonksiyonumuz
+    
     private func hasUniversity(){
         if university?.universities.count == 0 {
                 plusImageView.isHidden = true
             } else {
                 plusImageView.isHidden = false
             }    }
+    
+    
     func configure(university:UniversityData) {
         self.university=university
         self.universityCount = university.universities.count
@@ -48,18 +53,17 @@ class CitiesTableViewCell: UITableViewCell {
         hasUniversity()
         universityTableView.reloadData()
     }
-    
-   
 }
 extension CitiesTableViewCell: UITableViewDataSource, UITableViewDelegate,UniversityTableViewCellDelegate {
     func didTapNumberButton(withNumber number: String) {
         delegate?.didTapNumberButton(withNumber: number)
     }
-    func didTapWebsiteButton(withURL urlString: String,universityName:String) {
-        url=urlString
-        webTitle=universityName
-        delegate?.didTapWebsiteButton(withURL: url,webTitle: webTitle)
-
+    func didTapWebsiteButton(withURL urlString: String, universityName: String) {
+        url = urlString
+        webTitle = universityName
+        if let url = url, let webTitle = webTitle {
+            delegate?.didTapWebsiteButton(withURL: url, webTitle: webTitle)
+        }
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return universityCount

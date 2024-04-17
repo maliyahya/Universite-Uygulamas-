@@ -28,6 +28,8 @@ class WebViewViewController: UIViewController {
     }
 
     
+
+    
     func showAlert(message: String) {
         let alertController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "Tamam", style: .default, handler: nil))
