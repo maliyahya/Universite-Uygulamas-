@@ -15,14 +15,13 @@ class UniversityTableViewCell: UITableViewCell {
     @IBOutlet weak var addFavoriteImageView: UIImageView!
     @IBOutlet weak var rectorLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
-    let context = CoreDataManager.shared.persistentContainer.viewContext
     var universityInfos:University?
     var selectedRowIndex: Int?
     var isExpanded: Bool = false {
-        didSet {
-            plusImageView.image = isExpanded ? UIImage(systemName: "minus") : UIImage(systemName: "plus")
-        }
-    }
+          didSet {
+              plusImageView.image = isExpanded ? UIImage(systemName: "minus") : UIImage(systemName: "plus")
+          }
+      }
     override func awakeFromNib() {
         super.awakeFromNib()
         prepareGestures()
@@ -47,10 +46,6 @@ class UniversityTableViewCell: UITableViewCell {
         if let university = universityInfos {
             delegate?.didTapWebsiteButton(withURL: university.website,universityName: university.name)
         }
-    }
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-       
     }
     private func prepareGestures(){
         let favGesture = UITapGestureRecognizer(target: self, action: #selector(addFavoriteTapped))
@@ -94,7 +89,7 @@ class UniversityTableViewCell: UITableViewCell {
                addFavoriteImageView.image = UIImage(systemName: "heart")
            }
     }
-    func setKeyValueText(key: String, value: String,label:UILabel) {
+    private func setKeyValueText(key: String, value: String,label:UILabel) {
           let attributedString = NSMutableAttributedString(string: "\(key): \(value)")
           attributedString.addAttribute(.foregroundColor, value: UIColor.black, range: NSRange(location: 0, length: key.count + 1))
           attributedString.addAttribute(.foregroundColor, value: UIColor.link, range: NSRange(location: key.count + 2, length: value.count))

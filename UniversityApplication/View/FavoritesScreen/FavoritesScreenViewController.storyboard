@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina6_12" orientation="landscape" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,15 +13,15 @@
             <objects>
                 <viewController storyboardIdentifier="FavoritesScreenViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="FavoritesScreenViewController" customModule="UniversityApplication" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="852" height="393"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="wne-n9-Rul">
-                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="wne-n9-Rul">
+                                <rect key="frame" x="59" y="0.0" width="734" height="393"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Henüz Bir Üniversite Eklemedin!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H7O-do-NV1">
-                                <rect key="frame" x="16" y="179" width="361" height="74"/>
+                                <rect key="frame" x="34.666666666666686" y="120" width="782.66666666666652" height="37"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                 <color key="textColor" systemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -30,13 +30,13 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="wne-n9-Rul" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="3F4-hZ-BGm"/>
-                            <constraint firstItem="H7O-do-NV1" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="120" id="3sJ-Uo-Avo"/>
-                            <constraint firstItem="wne-n9-Rul" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="8Gv-GJ-G9K"/>
-                            <constraint firstItem="wne-n9-Rul" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="EJg-mV-jwo"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="H7O-do-NV1" secondAttribute="trailing" constant="16" id="H44-hb-xtQ"/>
-                            <constraint firstItem="H7O-do-NV1" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="OpI-n2-ksU"/>
-                            <constraint firstItem="wne-n9-Rul" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="ULa-z5-iHJ"/>
+                            <constraint firstItem="H7O-do-NV1" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="120" id="P68-lB-4s9"/>
+                            <constraint firstItem="wne-n9-Rul" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="PWc-xI-dQx"/>
+                            <constraint firstItem="H7O-do-NV1" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" multiplier="0.918575" id="Rlh-1N-pOE"/>
+                            <constraint firstItem="wne-n9-Rul" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="VfO-Dc-4F4"/>
+                            <constraint firstAttribute="bottom" secondItem="wne-n9-Rul" secondAttribute="bottom" id="ccG-T7-NOu"/>
+                            <constraint firstItem="wne-n9-Rul" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="fua-tm-RsS"/>
+                            <constraint firstItem="H7O-do-NV1" firstAttribute="centerX" secondItem="wne-n9-Rul" secondAttribute="centerX" id="rs6-6R-5kb"/>
                         </constraints>
                     </view>
                     <connections>

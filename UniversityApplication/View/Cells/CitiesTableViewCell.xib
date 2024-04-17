@@ -16,17 +16,16 @@
                 <rect key="frame" x="0.0" y="0.0" width="370" height="3245"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="oSk-da-Eth">
-                        <rect key="frame" x="16" y="51" width="370" height="5000"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="oSk-da-Eth">
+                        <rect key="frame" x="0.0" y="50" width="370" height="3195"/>
                     </tableView>
                     <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="plus" catalog="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YFg-7q-yvy">
-                        <rect key="frame" x="16" y="8" width="30" height="30"/>
+                        <rect key="frame" x="16" y="12.333333333333332" width="30" height="15.666666666666666"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="City Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ybR-tt-Nhl">
-                        <rect key="frame" x="54" y="7" width="268" height="30"/>
+                        <rect key="frame" x="54" y="10" width="268" height="20"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
@@ -34,6 +33,12 @@
                     </label>
                 </subviews>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="oSk-da-Eth" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="50" id="1Y1-td-pbc"/>
+                    <constraint firstAttribute="trailing" secondItem="oSk-da-Eth" secondAttribute="trailing" id="X6r-hs-oOb"/>
+                    <constraint firstItem="oSk-da-Eth" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="XNr-M6-G4a"/>
+                    <constraint firstAttribute="bottom" secondItem="oSk-da-Eth" secondAttribute="bottom" id="iOu-PJ-9i3"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>

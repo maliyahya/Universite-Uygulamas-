@@ -28,6 +28,7 @@ class FavoritesTableViewCell: UITableViewCell {
     var isExpanded: Bool = false {
           didSet {
               plusImageView.image = isExpanded ? UIImage(systemName: "minus") : UIImage(systemName: "plus")
+              
           }
       }
     override func awakeFromNib() {

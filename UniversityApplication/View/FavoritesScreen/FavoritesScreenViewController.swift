@@ -11,7 +11,7 @@ class FavoritesScreenViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var infoLabel: UILabel!
-    let vc = FavoriteScreenViewModel()
+    private var viewModel = FavoriteScreenViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         title="Favorilerim"
@@ -25,8 +25,8 @@ class FavoritesScreenViewController: UIViewController {
     }
     
     private func getFavorites(){
-        vc.favorites=CoreDataManager.shared.fetchExamples()
-        if (vc.favorites==[]){
+        viewModel.favorites=CoreDataManager.shared.fetchExamples()
+        if (viewModel.favorites==[]){
             infoLabel.isHidden=false
         }
         else{
@@ -48,7 +48,7 @@ extension FavoritesScreenViewController:UITableViewDelegate,UITableViewDataSourc
                            if success {
                                print("Phone call initiated successfully")
                            } else {
-                               print("Failed to initiate phone call")
+                               self.showAlert(message: "Arama gerçekleştirilemedi")
                            }
                        }
                    } else {
@@ -72,20 +72,22 @@ extension FavoritesScreenViewController:UITableViewDelegate,UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return vc.favorites?.count ?? 0
+        return viewModel.favorites?.count ?? 0
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "FavoritesTableViewCell", for: indexPath) as? FavoritesTableViewCell else {
             return UITableViewCell()
         }
-        if let favoriteUniversities = vc.favorites, indexPath.row < favoriteUniversities.count+1 {
-            cell.configure(model: favoriteUniversities[indexPath.row])
+        if let universityData = viewModel.favorites?[indexPath.row] {
+            cell.configure(model: universityData)
+            cell.delegate=self
+            let isExpanded = indexPath.row == viewModel.selectedRowIndex
+            cell.isExpanded = isExpanded
         }
-        cell.delegate=self
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if let selectedRowIndex = vc.selectedRowIndex, indexPath.row == selectedRowIndex {
+        if let selectedRowIndex = viewModel.selectedRowIndex, indexPath.row == selectedRowIndex {
             return CGFloat(240)
         } else {
             return CGFloat(40)
@@ -94,18 +96,18 @@ extension FavoritesScreenViewController:UITableViewDelegate,UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if let selectedUniversity = vc.favorites?[indexPath.row],
+        if let selectedUniversity = viewModel.favorites?[indexPath.row],
            selectedUniversity.adress == "-" && selectedUniversity.email == "-" && selectedUniversity.fax == "-" && selectedUniversity.phone == "-"  && selectedUniversity.rector == "-" && selectedUniversity.website == "-" {
                return
            }
 
-        if vc.selectedRowIndex == indexPath.row {
-            vc.selectedRowIndex = nil
+        if viewModel.selectedRowIndex == indexPath.row {
+            viewModel.selectedRowIndex = nil
             if let cell = tableView.cellForRow(at: indexPath) as? FavoritesTableViewCell {
                 cell.isExpanded = false
             }
         } else {
-            vc.selectedRowIndex = indexPath.row
+            viewModel.selectedRowIndex = indexPath.row
             if let cell = tableView.cellForRow(at: indexPath) as? FavoritesTableViewCell {
                 cell.isExpanded = true
             }

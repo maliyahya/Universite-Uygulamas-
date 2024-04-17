@@ -11,8 +11,6 @@ protocol CitiesTableViewCellDelegate: AnyObject {
     func didTapWebsiteButton(withURL urlString: String,webTitle:String)
     func didTapNumberButton(withNumber number:String)
 }
-
-
 class CitiesTableViewCell: UITableViewCell {
     weak var delegate: CitiesTableViewCellDelegate?
     @IBOutlet weak var plusImageView: UIImageView!
@@ -28,10 +26,11 @@ class CitiesTableViewCell: UITableViewCell {
           }
       }
     var selectedRowIndex: Int?
-
-
     override func awakeFromNib() {
         super.awakeFromNib()
+        prepareTable()
+    }
+    private func prepareTable(){
         universityTableView.delegate = self
         universityTableView.dataSource = self
         universityTableView.register(UINib(nibName: "UniversityTableViewCell", bundle: nil), forCellReuseIdentifier: "UniversityTableViewCell")
@@ -42,12 +41,6 @@ class CitiesTableViewCell: UITableViewCell {
             } else {
                 plusImageView.isHidden = false
             }    }
-    
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
-
     func configure(university:UniversityData) {
         self.university=university
         self.universityCount = university.universities.count
@@ -68,17 +61,18 @@ extension CitiesTableViewCell: UITableViewDataSource, UITableViewDelegate,Univer
         delegate?.didTapWebsiteButton(withURL: url,webTitle: webTitle)
 
     }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return universityCount
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "UniversityTableViewCell", for: indexPath) as? UniversityTableViewCell else {
             return UITableViewCell()
         }
-        cell.delegate=self
-        cell.configure(university: university!.universities[indexPath.row])
+            cell.configure(university: university!.universities[indexPath.row])
+            cell.delegate=self
+            let isExpanded = indexPath.row == selectedRowIndex
+            cell.isExpanded = isExpanded
         return cell
     }
 
@@ -94,23 +88,14 @@ extension CitiesTableViewCell: UITableViewDataSource, UITableViewDelegate,Univer
            selectedUniversity.adress == "-" && selectedUniversity.email == "-" && selectedUniversity.fax == "-" && selectedUniversity.phone == "-"  && selectedUniversity.rector == "-" && selectedUniversity.website == "-" {
                return
            }
+            if selectedRowIndex == indexPath.row {
+                selectedRowIndex = nil
+            } else {
+                selectedRowIndex = indexPath.row
+            }
+            tableView.reloadData()
         
-        if selectedRowIndex == indexPath.row {
-            selectedRowIndex = nil
-            if let cell = tableView.cellForRow(at: indexPath) as? UniversityTableViewCell {
-                cell.isFavorite()
-                cell.isExpanded = false
-            }
-        } else {
-            selectedRowIndex = indexPath.row
-            if let cell = tableView.cellForRow(at: indexPath) as? UniversityTableViewCell {
-                cell.isExpanded = true
-                cell.isFavorite()
 
-            }
-        }
-        tableView.beginUpdates()
-        tableView.endUpdates()
     }
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         if let cell = tableView.cellForRow(at: indexPath) as? UniversityTableViewCell {

@@ -30,9 +30,7 @@ class SplashScreenViewController: UIViewController {
 
     func navigateToMainScreen(with universities: AllUniversitiesModel) {
         if let mainViewController = UIStoryboard(name: "HomeScreenViewController", bundle: nil).instantiateViewController(withIdentifier: "HomeScreenViewController") as? HomeScreenViewController {
-            
-            mainViewController.vc.setUniversities(universities.data)
-            
+            mainViewController.viewModel.setUniversities(universities.data)
             let navigationController = UINavigationController(rootViewController: mainViewController)
             
             if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,

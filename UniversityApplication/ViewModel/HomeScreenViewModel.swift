@@ -13,9 +13,6 @@ class HomeScreenViewModel:ObservableObject {
     @Published var selectedRowIndex: Int?
     @Published var isFetchingData = false
 
-
-
-    
     func setUniversities(_ universities: [UniversityData]) {
            self.universities = universities
        }

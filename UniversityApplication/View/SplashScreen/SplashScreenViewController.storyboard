@@ -16,20 +16,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dawid-malecki-fw7lR3ibfpU-unsplash" translatesAutoresizingMaskIntoConstraints="NO" id="MMO-3c-U7r">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cap" translatesAutoresizingMaskIntoConstraints="NO" id="MMO-3c-U7r">
+                                <rect key="frame" x="118" y="177" width="157" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="t1H-sW-jMb"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Universities App" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AMM-P9-kU3">
-                                <rect key="frame" x="87" y="710" width="218" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="31"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Üniversiteler" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AMM-P9-kU3">
+                                <rect key="frame" x="97.666666666666686" y="427" width="198" height="44.666666666666686"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="37"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemGray2Color"/>
+                        <color key="backgroundColor" systemColor="systemMintColor"/>
+                        <constraints>
+                            <constraint firstItem="MMO-3c-U7r" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" multiplier="3" id="BAI-kf-X3r"/>
+                            <constraint firstItem="MMO-3c-U7r" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" multiplier="0.399491" id="K1a-gA-dzJ"/>
+                            <constraint firstItem="MMO-3c-U7r" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="MI8-5m-dXR"/>
+                            <constraint firstItem="MMO-3c-U7r" firstAttribute="centerX" secondItem="AMM-P9-kU3" secondAttribute="centerX" id="P5o-IB-fuZ"/>
+                            <constraint firstItem="AMM-P9-kU3" firstAttribute="top" secondItem="MMO-3c-U7r" secondAttribute="bottom" id="uTN-FW-uNj"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -38,9 +46,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="dawid-malecki-fw7lR3ibfpU-unsplash" width="2592" height="1936"/>
-        <systemColor name="systemGray2Color">
-            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <image name="cap" width="3000" height="3000"/>
+        <systemColor name="systemMintColor">
+            <color red="0.0" green="0.78039215689999997" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

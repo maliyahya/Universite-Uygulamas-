@@ -9,7 +9,7 @@ import UIKit
 
 
 class HomeScreenViewController: UIViewController {
-    var vc=HomeScreenViewModel()
+     var viewModel=HomeScreenViewModel()
     @IBOutlet weak var expandButton: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
@@ -21,8 +21,6 @@ class HomeScreenViewController: UIViewController {
         prepareTable()
         prepareFavoritesButton()
         NotificationCenter.default.addObserver(self, selector: #selector(updateTable), name: NSNotification.Name("UpdateTable"), object: nil)
-
-
     }
     @objc func updateTable() {
          tableView.reloadData()
@@ -31,7 +29,7 @@ class HomeScreenViewController: UIViewController {
         for indexPath in tableView.indexPathsForVisibleRows ?? [] {
             if let cell = tableView.cellForRow(at: indexPath) as? CitiesTableViewCell {
                 cell.isExpanded = false
-                vc.selectedRowIndex=nil
+                viewModel.selectedRowIndex=nil
             }
         }
         
@@ -81,16 +79,16 @@ class HomeScreenViewController: UIViewController {
         let offsetY = scrollView.contentOffset.y
         let contentHeight = scrollView.contentSize.height
         let screenHeight = scrollView.frame.size.height
-        if offsetY > contentHeight - screenHeight && !vc.isFetchingData && vc.pageNumber < 3 {
-            vc.isFetchingData = true
+        if offsetY > contentHeight - screenHeight && !viewModel.isFetchingData && viewModel.pageNumber < 3 {
+            viewModel.isFetchingData = true
             showActivityIndicator()
             DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                self.vc.pageNumber += 1
-                NetworkManager.shared.getUniversityList(pageNumber: self.vc.pageNumber) { result in
-                    self.vc.isFetchingData = false
+                self.viewModel.pageNumber += 1
+                NetworkManager.shared.getUniversityList(pageNumber: self.viewModel.pageNumber) { result in
+                    self.viewModel.isFetchingData = false
                     switch result {
                     case .success(let success):
-                        self.vc.universities?.append(contentsOf: success.data)
+                        self.viewModel.universities?.append(contentsOf: success.data)
                         DispatchQueue.main.async {
                             self.tableView.reloadData()
                         }
@@ -106,47 +104,39 @@ class HomeScreenViewController: UIViewController {
 }
 extension HomeScreenViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return vc.universities?.count ?? 0
+        return viewModel.universities?.count ?? 0
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CitiesTableViewCell", for: indexPath) as? CitiesTableViewCell else {
             return UITableViewCell()
         }
-        if let universityData = vc.universities?[indexPath.row] {
+        if let universityData = viewModel.universities?[indexPath.row] {
             cell.configure(university: universityData)
             cell.delegate=self
+            let isExpanded = indexPath.row == viewModel.selectedRowIndex
+            cell.isExpanded = isExpanded
         }
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if let selectedRowIndex = vc.selectedRowIndex, indexPath.row == selectedRowIndex {
-            return CGFloat((vc.universities?[selectedRowIndex].universities.count ?? 0) * 40+252)
+        if let selectedRowIndex = viewModel.selectedRowIndex, indexPath.row == selectedRowIndex {
+            return CGFloat((viewModel.universities?[selectedRowIndex].universities.count ?? 0) * 40+252)
           } else {
               return UITableView.automaticDimension
           }    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if let universitiesCount = viewModel.universities?[indexPath.row].universities.count, universitiesCount == 0 {
+            return
+        }
 
-        if vc.selectedRowIndex == indexPath.row {
-            vc.selectedRowIndex = nil
-            if let cell = tableView.cellForRow(at: indexPath) as? CitiesTableViewCell {
-                cell.isExpanded = false
-            }
+        if viewModel.selectedRowIndex == indexPath.row {
+            viewModel.selectedRowIndex = nil
         } else {
-            vc.selectedRowIndex = indexPath.row
-            if let cell = tableView.cellForRow(at: indexPath) as? CitiesTableViewCell {
-                cell.isExpanded = true
-            }
+            viewModel.selectedRowIndex = indexPath.row
         }
-        tableView.beginUpdates()
-        tableView.endUpdates()
-    }
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        if let cell = tableView.cellForRow(at: indexPath) as? CitiesTableViewCell {
-            cell.isExpanded = false
-        }
-        tableView.beginUpdates()
-        tableView.endUpdates()
+        tableView.reloadData()
     }
 }
 extension HomeScreenViewController: CitiesTableViewCellDelegate {
@@ -156,7 +146,7 @@ extension HomeScreenViewController: CitiesTableViewCellDelegate {
                        if success {
                            print("Phone call initiated successfully")
                        } else {
-                           print("Failed to initiate phone call")
+                           self.showError(message: "Arama gerçekleştirilemedi")
                        }
                    }
                } else {
