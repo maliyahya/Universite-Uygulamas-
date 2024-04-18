@@ -141,6 +141,7 @@ extension HomeScreenViewController: UITableViewDelegate, UITableViewDataSource,C
         
         tableView.reloadData()
         
+        //Seçilen celle  göre ekranın kaydırılmasını sağlayan fonksiyonumuz
         if let selectedCell = tableView.cellForRow(at: indexPath) {
                 let yOffset = selectedCell.frame.origin.y
                 if yOffset > 0 {

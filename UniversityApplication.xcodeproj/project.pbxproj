@@ -43,12 +43,12 @@
 		2402A50C2BC5911800D9A938 /* FavoritesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewCell.swift; sourceTree = "<group>"; };
 		2402A50D2BC5911800D9A938 /* FavoritesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoritesTableViewCell.xib; sourceTree = "<group>"; };
 		2409EA4D2BC016B100291A63 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
-		241EF5A42BC970B2002EED54 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../../../Desktop/Info.plist; sourceTree = "<group>"; };
 		241EF5A62BC97C25002EED54 /* FavoriteScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteScreenViewModel.swift; sourceTree = "<group>"; };
 		241EF5AB2BC97F0E002EED54 /* WebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewViewController.swift; sourceTree = "<group>"; };
 		241EF5AF2BC980AE002EED54 /* WebViewViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WebViewViewController.storyboard; sourceTree = "<group>"; };
 		241EF5B12BC98446002EED54 /* Extensions+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+String.swift"; sourceTree = "<group>"; };
 		241EF5B32BC98ECD002EED54 /* Extesions+University.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extesions+University.swift"; sourceTree = "<group>"; };
+		244C14212BD15AC200253893 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24C2582C2BBEC80600CD5E0F /* UniversityApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UniversityApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24C2582F2BBEC80600CD5E0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24C258312BBEC80600CD5E0F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +99,25 @@
 			path = WebViewScreen;
 			sourceTree = "<group>";
 		};
+		244C14202BD15AB600253893 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				24C2583B2BBEC80800CD5E0F /* Assets.xcassets */,
+				244C14212BD15AC200253893 /* Info.plist */,
+				24C2582F2BBEC80600CD5E0F /* AppDelegate.swift */,
+				24C258312BBEC80600CD5E0F /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		244C14222BD15B2D00253893 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				24C258382BBEC80600CD5E0F /* UniversityModel.xcdatamodeld */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
 		24C258232BBEC80600CD5E0F = {
 			isa = PBXGroup;
 			children = (
@@ -118,18 +137,15 @@
 		24C2582E2BBEC80600CD5E0F /* UniversityApplication */ = {
 			isa = PBXGroup;
 			children = (
+				244C14222BD15B2D00253893 /* Database */,
+				244C14202BD15AB600253893 /* App */,
 				2409EA522BC01AF700291A63 /* Extensions */,
 				24C258672BBECD0400CD5E0F /* ViewModel */,
 				24C258572BBEC9CE00CD5E0F /* View */,
 				24C258522BBEC91D00CD5E0F /* Model */,
 				24C2584B2BBEC8DB00CD5E0F /* Constants */,
 				24C258482BBEC8C400CD5E0F /* Managers */,
-				24C2582F2BBEC80600CD5E0F /* AppDelegate.swift */,
-				24C258312BBEC80600CD5E0F /* SceneDelegate.swift */,
 				24C258352BBEC80600CD5E0F /* Main.storyboard */,
-				241EF5A42BC970B2002EED54 /* Info.plist */,
-				24C2583B2BBEC80800CD5E0F /* Assets.xcassets */,
-				24C258382BBEC80600CD5E0F /* UniversityModel.xcdatamodeld */,
 			);
 			path = UniversityApplication;
 			sourceTree = "<group>";
@@ -479,6 +495,8 @@
 				DEVELOPMENT_TEAM = B94RW248TX;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = UniversityApplication/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Üniversiteler";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = SplashScreenViewController;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -507,6 +525,8 @@
 				DEVELOPMENT_TEAM = B94RW248TX;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = UniversityApplication/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Üniversiteler";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = SplashScreenViewController;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

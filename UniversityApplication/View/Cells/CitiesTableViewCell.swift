@@ -97,8 +97,10 @@ extension CitiesTableViewCell: UITableViewDataSource, UITableViewDelegate,Univer
             } else {
                 selectedRowIndex = indexPath.row
             }
+        tableView.reloadData()
+
+     
         
-            tableView.reloadData()
         
 
     }

@@ -113,7 +113,7 @@ extension FavoritesScreenViewController:UITableViewDelegate,UITableViewDataSourc
         
         //Seçilen celle  göre ekranın kaydırılmasını sağlayan fonksiyonumuz
         if let selectedCell = tableView.cellForRow(at: indexPath) {
-                let yOffset = selectedCell.frame.origin.y - 200
+                let yOffset = selectedCell.frame.origin.y
                 if yOffset > 0 {
                     tableView.setContentOffset(CGPoint(x: 0, y: yOffset), animated: true)
                 } else {
