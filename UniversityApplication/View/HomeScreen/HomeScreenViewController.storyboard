@@ -27,9 +27,8 @@
                                 <color key="tintColor" systemColor="systemIndigoColor"/>
                                 <color key="color" systemColor="systemIndigoColor"/>
                             </activityIndicatorView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ptt-h8-41U">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ptt-h8-41U">
                                 <rect key="frame" x="320" y="735.66666666666663" width="50" height="34.333333333333371"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled">
                                     <imageReference key="image" image="mount.fill" catalog="system" symbolScale="large"/>
@@ -43,9 +42,12 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="9hN-Uj-TSJ" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="KSl-f4-tdc"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="ptt-h8-41U" secondAttribute="bottom" constant="48" id="UZX-jZ-toP"/>
                             <constraint firstItem="9hN-Uj-TSJ" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="cwb-tN-BLJ"/>
                             <constraint firstItem="9hN-Uj-TSJ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="gUJ-BQ-bwe"/>
                             <constraint firstItem="9hN-Uj-TSJ" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="jYW-Vm-UR3"/>
+                            <constraint firstItem="ptt-h8-41U" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" multiplier="0.127226" id="n49-5V-ROg"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ptt-h8-41U" secondAttribute="trailing" constant="23" id="vyD-ZX-6mP"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Üniversiteler" id="Xkw-cL-tTH">
