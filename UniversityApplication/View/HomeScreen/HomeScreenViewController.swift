@@ -85,7 +85,7 @@ class HomeScreenViewController: UIViewController {
         if offsetY > contentHeight - screenHeight && !viewModel.isFetchingData && viewModel.pageNumber < 3 {
             viewModel.isFetchingData = true
             showActivityIndicator()
-            DispatchQueue.main.asyncAfter(deadline: .now()+1.0){
+            DispatchQueue.main.asyncAfter(deadline: .now()+2.0){
                 self.viewModel.pageNumber += 1
                 NetworkManager.shared.getUniversityList(pageNumber: self.viewModel.pageNumber) { result in
                     self.viewModel.isFetchingData = false
@@ -123,7 +123,7 @@ extension HomeScreenViewController: UITableViewDelegate, UITableViewDataSource,C
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if let selectedRowIndex = viewModel.selectedRowIndex, indexPath.row == selectedRowIndex {
-            return CGFloat((viewModel.universities?[selectedRowIndex].universities.count ?? 0) * 40+250)    
+            return CGFloat((viewModel.universities?[selectedRowIndex].universities.count ?? 0) * 40+250)
           } else {
               return UITableView.automaticDimension
           }    }
@@ -142,7 +142,7 @@ extension HomeScreenViewController: UITableViewDelegate, UITableViewDataSource,C
         tableView.reloadData()
         
         if let selectedCell = tableView.cellForRow(at: indexPath) {
-                let yOffset = selectedCell.frame.origin.y - 200
+                let yOffset = selectedCell.frame.origin.y
                 if yOffset > 0 {
                     tableView.setContentOffset(CGPoint(x: 0, y: yOffset), animated: true)
                 } else {
