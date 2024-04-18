@@ -41,10 +41,10 @@ class FavoritesTableViewCell: UITableViewCell {
     }
     func configure(model:UniversityModel){
         universityName.text=model.name
-        setKeyValueText(key: "Rector ", value: model.rector ?? "",label: rectorLabel)
-        setKeyValueText(key: "Adress ", value: model.adress ?? "",label: adressLabel)
+        setKeyValueText(key: "Rektör ", value: model.rector ?? "",label: rectorLabel)
+        setKeyValueText(key: "Adres ", value: model.adress ?? "",label: adressLabel)
         setKeyValueText(key: "Fax ", value: model.fax ?? "",label: faxLabel)
-        setKeyValueText(key: "Number ", value: model.phone ?? "",label: numberLabel)
+        setKeyValueText(key: "Telefon ", value: model.phone ?? "",label: numberLabel)
         setKeyValueText(key: "Website ", value: model.website ?? "",label: websiteLabel)
         universityInfos=model
         hasInfo()

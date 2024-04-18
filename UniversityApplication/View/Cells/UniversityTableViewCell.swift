@@ -28,10 +28,10 @@ class UniversityTableViewCell: UITableViewCell {
     }
     func configure(university: University) {
         universitiesLabel.text = university.name
-        setKeyValueText(key: "Rector ", value: university.rector ,label: rectorLabel)
-        setKeyValueText(key: "Adress ", value: university.adress ,label: addressLabel)
+        setKeyValueText(key: "Rektör ", value: university.rector ,label: rectorLabel)
+        setKeyValueText(key: "Adres ", value: university.adress ,label: addressLabel)
         setKeyValueText(key: "Fax ", value: university.fax ,label: faxLabel)
-        setKeyValueText(key: "Number ", value: university.phone ,label: numberLabel)
+        setKeyValueText(key: "Telefon ", value: university.phone ,label: numberLabel)
         setKeyValueText(key: "Website ", value: university.website,label: websiteLabel)
         self.universityInfos=university
         isFavorite()
