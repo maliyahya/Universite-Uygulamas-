@@ -19,24 +19,26 @@
                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="oSk-da-Eth">
                         <rect key="frame" x="0.0" y="50" width="370" height="3195"/>
                     </tableView>
-                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="plus" catalog="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YFg-7q-yvy">
-                        <rect key="frame" x="16" y="12.333333333333332" width="30" height="15.666666666666666"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plus" catalog="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YFg-7q-yvy">
+                        <rect key="frame" x="16" y="12.33333333333333" width="18" height="15.66666666666667"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="City Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ybR-tt-Nhl">
-                        <rect key="frame" x="54" y="10" width="268" height="20"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ybR-tt-Nhl">
+                        <rect key="frame" x="42.000000000000007" y="10" width="102.66666666666669" height="20"/>
+                        <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="17"/>
+                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="oSk-da-Eth" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="50" id="1Y1-td-pbc"/>
+                    <constraint firstItem="YFg-7q-yvy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Gvx-Xk-Zrg"/>
+                    <constraint firstItem="YFg-7q-yvy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="TEh-7g-yRr"/>
                     <constraint firstAttribute="trailing" secondItem="oSk-da-Eth" secondAttribute="trailing" id="X6r-hs-oOb"/>
                     <constraint firstItem="oSk-da-Eth" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="XNr-M6-G4a"/>
+                    <constraint firstItem="ybR-tt-Nhl" firstAttribute="leading" secondItem="YFg-7q-yvy" secondAttribute="trailing" constant="8" symbolic="YES" id="g0j-UR-uTh"/>
+                    <constraint firstItem="ybR-tt-Nhl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="gtI-wF-CV1"/>
                     <constraint firstAttribute="bottom" secondItem="oSk-da-Eth" secondAttribute="bottom" id="iOu-PJ-9i3"/>
                 </constraints>
             </tableViewCellContentView>

@@ -20,33 +20,39 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KDn-by-N6D">
                         <rect key="frame" x="0.0" y="0.0" width="370" height="250"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="University Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adc-Li-2EZ">
+                                <rect key="frame" x="79" y="7" width="240" height="20"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ia-cY-X8x">
-                                <rect key="frame" x="50" y="49" width="312" height="20.333333333333329"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="50" y="49" width="300" height="16.333333333333329"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Website" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bkm-hf-KGJ">
-                                <rect key="frame" x="50" y="129" width="312" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="50" y="129" width="300" height="18.666666666666657"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rector" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tdQ-tX-F8p">
-                                <rect key="frame" x="50" y="201" width="312" height="21"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                <rect key="frame" x="50" y="201" width="300" height="18.666666666666657"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hpb-7V-qwd">
-                                <rect key="frame" x="50" y="166" width="312" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="50" y="166" width="300" height="18.666666666666657"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fax" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q6y-Zg-tNn">
-                                <rect key="frame" x="50" y="90" width="312" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="50" y="90" width="300" height="17.666666666666671"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -62,7 +68,7 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
                             <constraint firstItem="hpb-7V-qwd" firstAttribute="leading" secondItem="KDn-by-N6D" secondAttribute="leading" constant="50" id="15r-1Z-eh2"/>
                             <constraint firstItem="9ia-cY-X8x" firstAttribute="top" secondItem="KDn-by-N6D" secondAttribute="top" constant="49" id="4UY-q9-Rrq"/>
@@ -71,35 +77,29 @@
                             <constraint firstItem="hpb-7V-qwd" firstAttribute="top" secondItem="KDn-by-N6D" secondAttribute="top" constant="166" id="9L5-XG-Q8p"/>
                             <constraint firstItem="q6y-Zg-tNn" firstAttribute="leading" secondItem="KDn-by-N6D" secondAttribute="leading" constant="50" id="BWR-5F-JeZ"/>
                             <constraint firstItem="9ia-cY-X8x" firstAttribute="top" secondItem="oW5-A4-dI2" secondAttribute="bottom" constant="23.000000000000004" id="CeB-Gi-VUR"/>
-                            <constraint firstAttribute="trailing" secondItem="Bkm-hf-KGJ" secondAttribute="trailing" constant="8" id="IIW-4N-OQe"/>
+                            <constraint firstAttribute="trailing" secondItem="Bkm-hf-KGJ" secondAttribute="trailing" constant="20" id="IIW-4N-OQe"/>
                             <constraint firstItem="oW5-A4-dI2" firstAttribute="centerY" secondItem="6wJ-0R-oe4" secondAttribute="centerY" id="J7t-hY-2TB"/>
                             <constraint firstItem="9ia-cY-X8x" firstAttribute="leading" secondItem="KDn-by-N6D" secondAttribute="leading" constant="50" id="Jjd-1d-VlE"/>
-                            <constraint firstAttribute="trailing" secondItem="q6y-Zg-tNn" secondAttribute="trailing" constant="8" id="MCh-Wc-xYs"/>
-                            <constraint firstAttribute="trailing" secondItem="tdQ-tX-F8p" secondAttribute="trailing" constant="8" id="bFT-pD-oLE"/>
+                            <constraint firstAttribute="trailing" secondItem="q6y-Zg-tNn" secondAttribute="trailing" constant="20" id="MCh-Wc-xYs"/>
+                            <constraint firstAttribute="trailing" secondItem="tdQ-tX-F8p" secondAttribute="trailing" constant="20" id="bFT-pD-oLE"/>
                             <constraint firstItem="tdQ-tX-F8p" firstAttribute="top" secondItem="KDn-by-N6D" secondAttribute="top" constant="201" id="bvg-g6-NOC"/>
                             <constraint firstItem="Bkm-hf-KGJ" firstAttribute="top" secondItem="KDn-by-N6D" secondAttribute="top" constant="129" id="cmD-FL-poV"/>
-                            <constraint firstAttribute="trailing" secondItem="hpb-7V-qwd" secondAttribute="trailing" constant="8" id="sZV-aS-AhX"/>
+                            <constraint firstAttribute="trailing" secondItem="hpb-7V-qwd" secondAttribute="trailing" constant="20" id="sZV-aS-AhX"/>
                             <constraint firstItem="tdQ-tX-F8p" firstAttribute="leading" secondItem="KDn-by-N6D" secondAttribute="leading" constant="50" id="swP-wz-Y93"/>
                             <constraint firstItem="q6y-Zg-tNn" firstAttribute="top" secondItem="KDn-by-N6D" secondAttribute="top" constant="90" id="wCz-KI-Txb"/>
-                            <constraint firstAttribute="trailing" secondItem="9ia-cY-X8x" secondAttribute="trailing" constant="8" id="wbx-g6-GCZ"/>
+                            <constraint firstAttribute="trailing" secondItem="9ia-cY-X8x" secondAttribute="trailing" constant="20" id="wbx-g6-GCZ"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="University Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adc-Li-2EZ">
-                        <rect key="frame" x="99" y="5.9999999999999982" width="213" height="20.333333333333329"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="KDn-by-N6D" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="9m6-DW-Wxf"/>
                     <constraint firstAttribute="bottom" secondItem="KDn-by-N6D" secondAttribute="bottom" id="GVP-Tc-Upk"/>
-                    <constraint firstItem="adc-Li-2EZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="L01-nd-YUX"/>
-                    <constraint firstItem="adc-Li-2EZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="99" id="NrB-c0-NFi"/>
+                    <constraint firstItem="adc-Li-2EZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="7" id="OLZ-3y-s6B"/>
+                    <constraint firstAttribute="trailing" secondItem="adc-Li-2EZ" secondAttribute="trailing" constant="51" id="QoV-st-jAw"/>
                     <constraint firstAttribute="trailing" secondItem="6wJ-0R-oe4" secondAttribute="trailing" constant="8" id="RbF-yE-tNb"/>
                     <constraint firstItem="oW5-A4-dI2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="35" id="cKP-Ph-btw"/>
                     <constraint firstItem="q6y-Zg-tNn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="50" id="eAl-u3-VYI"/>
-                    <constraint firstAttribute="trailing" secondItem="adc-Li-2EZ" secondAttribute="trailing" constant="58" id="nvG-XL-ZJN"/>
+                    <constraint firstItem="adc-Li-2EZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="79" id="nrF-iz-2kB"/>
                     <constraint firstItem="6wJ-0R-oe4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6.0000000000000018" id="pqG-1r-4hU"/>
                     <constraint firstItem="KDn-by-N6D" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="tII-BK-e7j"/>
                     <constraint firstAttribute="trailing" secondItem="KDn-by-N6D" secondAttribute="trailing" id="xdf-iZ-ATq"/>
@@ -122,7 +122,7 @@
     <resources>
         <image name="heart.fill" catalog="system" width="128" height="107"/>
         <image name="plus" catalog="system" width="128" height="113"/>
-        <systemColor name="secondarySystemBackgroundColor">
+        <systemColor name="systemGray6Color">
             <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
