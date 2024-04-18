@@ -63,22 +63,19 @@ class HomeScreenViewController: UIViewController {
     private func showActivityIndicator() {
         activityIndicator.isHidden=false
         activityIndicator.startAnimating()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-            self.activityIndicator.isHidden=true
-            self.reloadTableView()
-        }
     }
-    private func reloadTableView() {
-        activityIndicator.stopAnimating()
-        tableView.reloadData()
+    private func hideActivityIndicator(){
+        self.tableView.reloadData()
+        self.activityIndicator.stopAnimating()
+        self.activityIndicator.isHidden=true
     }
+  
     
     func showError(message: String) {
         let alert = UIAlertController(title: "Hata", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Tamam", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
     }
-    
     //Sayfa sonuna geldiğimizde sıradaki sayfanın verilerini çekip tableımıza ekleyen fonksiyonumuz
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -88,7 +85,7 @@ class HomeScreenViewController: UIViewController {
         if offsetY > contentHeight - screenHeight && !viewModel.isFetchingData && viewModel.pageNumber < 3 {
             viewModel.isFetchingData = true
             showActivityIndicator()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            DispatchQueue.main.asyncAfter(deadline: .now()+1.0){
                 self.viewModel.pageNumber += 1
                 NetworkManager.shared.getUniversityList(pageNumber: self.viewModel.pageNumber) { result in
                     self.viewModel.isFetchingData = false
@@ -96,7 +93,7 @@ class HomeScreenViewController: UIViewController {
                     case .success(let success):
                         self.viewModel.universities?.append(contentsOf: success.data)
                         DispatchQueue.main.async {
-                            self.tableView.reloadData()
+                            self.hideActivityIndicator()
                         }
                     case .failure(_):
                         DispatchQueue.main.async {
@@ -126,7 +123,7 @@ extension HomeScreenViewController: UITableViewDelegate, UITableViewDataSource,C
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if let selectedRowIndex = viewModel.selectedRowIndex, indexPath.row == selectedRowIndex {
-            return CGFloat((viewModel.universities?[selectedRowIndex].universities.count ?? 0) * 40+252)
+            return CGFloat((viewModel.universities?[selectedRowIndex].universities.count ?? 0) * 40+250)    
           } else {
               return UITableView.automaticDimension
           }    }

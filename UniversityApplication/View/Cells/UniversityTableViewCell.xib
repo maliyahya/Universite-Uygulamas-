@@ -22,7 +22,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="University Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adc-Li-2EZ">
                                 <rect key="frame" x="79" y="7" width="240" height="20"/>
-                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -39,13 +39,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rector" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tdQ-tX-F8p">
-                                <rect key="frame" x="50" y="201" width="300" height="18.666666666666657"/>
+                                <rect key="frame" x="50" y="201" width="312" height="18.666666666666657"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hpb-7V-qwd">
-                                <rect key="frame" x="50" y="166" width="300" height="18.666666666666657"/>
+                                <rect key="frame" x="50" y="166" width="312" height="18.666666666666657"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -81,10 +81,10 @@
                             <constraint firstItem="oW5-A4-dI2" firstAttribute="centerY" secondItem="6wJ-0R-oe4" secondAttribute="centerY" id="J7t-hY-2TB"/>
                             <constraint firstItem="9ia-cY-X8x" firstAttribute="leading" secondItem="KDn-by-N6D" secondAttribute="leading" constant="50" id="Jjd-1d-VlE"/>
                             <constraint firstAttribute="trailing" secondItem="q6y-Zg-tNn" secondAttribute="trailing" constant="20" id="MCh-Wc-xYs"/>
-                            <constraint firstAttribute="trailing" secondItem="tdQ-tX-F8p" secondAttribute="trailing" constant="20" id="bFT-pD-oLE"/>
+                            <constraint firstAttribute="trailing" secondItem="tdQ-tX-F8p" secondAttribute="trailing" constant="8" id="bFT-pD-oLE"/>
                             <constraint firstItem="tdQ-tX-F8p" firstAttribute="top" secondItem="KDn-by-N6D" secondAttribute="top" constant="201" id="bvg-g6-NOC"/>
                             <constraint firstItem="Bkm-hf-KGJ" firstAttribute="top" secondItem="KDn-by-N6D" secondAttribute="top" constant="129" id="cmD-FL-poV"/>
-                            <constraint firstAttribute="trailing" secondItem="hpb-7V-qwd" secondAttribute="trailing" constant="20" id="sZV-aS-AhX"/>
+                            <constraint firstAttribute="trailing" secondItem="hpb-7V-qwd" secondAttribute="trailing" constant="8" id="sZV-aS-AhX"/>
                             <constraint firstItem="tdQ-tX-F8p" firstAttribute="leading" secondItem="KDn-by-N6D" secondAttribute="leading" constant="50" id="swP-wz-Y93"/>
                             <constraint firstItem="q6y-Zg-tNn" firstAttribute="top" secondItem="KDn-by-N6D" secondAttribute="top" constant="90" id="wCz-KI-Txb"/>
                             <constraint firstAttribute="trailing" secondItem="9ia-cY-X8x" secondAttribute="trailing" constant="20" id="wbx-g6-GCZ"/>
