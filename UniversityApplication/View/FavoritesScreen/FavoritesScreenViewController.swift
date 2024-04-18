@@ -47,7 +47,7 @@ extension FavoritesScreenViewController:UITableViewDelegate,UITableViewDataSourc
                            if success {
                                print("Phone call initiated successfully")
                            } else {
-                               self.showAlert(message: "Arama gerçekleştirilemedi")
+                               self.showAlert(message: "Phone Call Failed")
                            }
                        }
                    } else {
@@ -110,16 +110,7 @@ extension FavoritesScreenViewController:UITableViewDelegate,UITableViewDataSourc
             }
         }
         tableView.reloadData()
-        
-        //Seçilen celle  göre ekranın kaydırılmasını sağlayan fonksiyonumuz
-        if let selectedCell = tableView.cellForRow(at: indexPath) {
-                let yOffset = selectedCell.frame.origin.y
-                if yOffset > 0 {
-                    tableView.setContentOffset(CGPoint(x: 0, y: yOffset), animated: true)
-                } else {
-                    tableView.setContentOffset(CGPoint(x: 0, y: -tableView.contentInset.top), animated: true)
-                }
-            }
+   
     }
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         if let cell = tableView.cellForRow(at: indexPath) as? FavoritesTableViewCell {

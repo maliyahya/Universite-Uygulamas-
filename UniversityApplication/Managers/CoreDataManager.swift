@@ -53,7 +53,7 @@ class CoreDataManager{
             return examples
         }
         catch let fetchError{
-            print("Failed to fetch companies:\(fetchError) ")
+            print("Failed to fetch universities:\(fetchError) ")
         }
         return nil
     }

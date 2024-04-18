@@ -21,31 +21,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="370" height="227"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SsW-Z3-RLa">
-                                <rect key="frame" x="67" y="49" width="295" height="17.666666666666671"/>
+                                <rect key="frame" x="30" y="49" width="305" height="17.666666666666671"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Website" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8pC-vO-LPb">
-                                <rect key="frame" x="67" y="129" width="295" height="18.666666666666657"/>
+                                <rect key="frame" x="30" y="129" width="305" height="18.666666666666657"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rector" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3QI-a6-lVT">
-                                <rect key="frame" x="67" y="201" width="295" height="18.666666666666657"/>
+                                <rect key="frame" x="30" y="201" width="305" height="18.666666666666657"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PxW-wp-C4b">
-                                <rect key="frame" x="67" y="166" width="295" height="18.666666666666657"/>
+                                <rect key="frame" x="30" y="166" width="305" height="18.666666666666657"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fax" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P9z-t6-L5v">
-                                <rect key="frame" x="67" y="90" width="295" height="17.666666666666671"/>
+                                <rect key="frame" x="30" y="90" width="305" height="17.666666666666671"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -54,20 +54,20 @@
                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="8pC-vO-LPb" firstAttribute="top" secondItem="9aR-ZD-Inf" secondAttribute="top" constant="129" id="9Gv-aG-fjI"/>
-                            <constraint firstAttribute="trailing" secondItem="3QI-a6-lVT" secondAttribute="trailing" constant="8" id="Bbu-Qe-8uD"/>
-                            <constraint firstItem="8pC-vO-LPb" firstAttribute="leading" secondItem="9aR-ZD-Inf" secondAttribute="leading" constant="67" id="C1r-nW-HB7"/>
-                            <constraint firstItem="SsW-Z3-RLa" firstAttribute="leading" secondItem="9aR-ZD-Inf" secondAttribute="leading" constant="67" id="F4A-DK-Wkd"/>
-                            <constraint firstItem="PxW-wp-C4b" firstAttribute="leading" secondItem="9aR-ZD-Inf" secondAttribute="leading" constant="67" id="Nd2-nQ-jET"/>
-                            <constraint firstItem="P9z-t6-L5v" firstAttribute="leading" secondItem="9aR-ZD-Inf" secondAttribute="leading" constant="67" id="SUu-Wq-aeg"/>
+                            <constraint firstAttribute="trailing" secondItem="3QI-a6-lVT" secondAttribute="trailing" constant="35" id="Bbu-Qe-8uD"/>
+                            <constraint firstItem="8pC-vO-LPb" firstAttribute="leading" secondItem="9aR-ZD-Inf" secondAttribute="leading" constant="30" id="C1r-nW-HB7"/>
+                            <constraint firstItem="SsW-Z3-RLa" firstAttribute="leading" secondItem="9aR-ZD-Inf" secondAttribute="leading" constant="30" id="F4A-DK-Wkd"/>
+                            <constraint firstItem="PxW-wp-C4b" firstAttribute="leading" secondItem="9aR-ZD-Inf" secondAttribute="leading" constant="30" id="Nd2-nQ-jET"/>
+                            <constraint firstItem="P9z-t6-L5v" firstAttribute="leading" secondItem="9aR-ZD-Inf" secondAttribute="leading" constant="30" id="SUu-Wq-aeg"/>
                             <constraint firstItem="SsW-Z3-RLa" firstAttribute="top" secondItem="9aR-ZD-Inf" secondAttribute="top" constant="49" id="Tv0-ro-w5Y"/>
-                            <constraint firstAttribute="trailing" secondItem="8pC-vO-LPb" secondAttribute="trailing" constant="8" id="UMf-Ve-2OP"/>
-                            <constraint firstAttribute="trailing" secondItem="PxW-wp-C4b" secondAttribute="trailing" constant="8" id="XaP-g6-Gva"/>
-                            <constraint firstAttribute="trailing" secondItem="SsW-Z3-RLa" secondAttribute="trailing" constant="8" id="ZB3-Cp-yqp"/>
+                            <constraint firstAttribute="trailing" secondItem="8pC-vO-LPb" secondAttribute="trailing" constant="35" id="UMf-Ve-2OP"/>
+                            <constraint firstAttribute="trailing" secondItem="PxW-wp-C4b" secondAttribute="trailing" constant="35" id="XaP-g6-Gva"/>
+                            <constraint firstAttribute="trailing" secondItem="SsW-Z3-RLa" secondAttribute="trailing" constant="35" id="ZB3-Cp-yqp"/>
                             <constraint firstItem="3QI-a6-lVT" firstAttribute="top" secondItem="9aR-ZD-Inf" secondAttribute="top" constant="201" id="jr8-IX-sbe"/>
-                            <constraint firstAttribute="trailing" secondItem="P9z-t6-L5v" secondAttribute="trailing" constant="8" id="lR6-gc-1W6"/>
+                            <constraint firstAttribute="trailing" secondItem="P9z-t6-L5v" secondAttribute="trailing" constant="35" id="lR6-gc-1W6"/>
                             <constraint firstItem="PxW-wp-C4b" firstAttribute="top" secondItem="9aR-ZD-Inf" secondAttribute="top" constant="166" id="mQo-Mm-YDo"/>
                             <constraint firstItem="P9z-t6-L5v" firstAttribute="top" secondItem="9aR-ZD-Inf" secondAttribute="top" constant="90" id="uCx-wK-yJv"/>
-                            <constraint firstItem="3QI-a6-lVT" firstAttribute="leading" secondItem="9aR-ZD-Inf" secondAttribute="leading" constant="67" id="wt8-zl-jMw"/>
+                            <constraint firstItem="3QI-a6-lVT" firstAttribute="leading" secondItem="9aR-ZD-Inf" secondAttribute="leading" constant="30" id="wt8-zl-jMw"/>
                         </constraints>
                     </view>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Chr-0w-Ds9">

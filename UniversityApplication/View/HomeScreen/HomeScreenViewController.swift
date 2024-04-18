@@ -157,7 +157,7 @@ extension HomeScreenViewController: UITableViewDelegate, UITableViewDataSource,C
                        if success {
                            print("Phone call initiated successfully")
                        } else {
-                           self.showError(message: "Arama gerçekleştirilemedi")
+                           self.showError(message: "Phone Call Failed")
                        }
                    }
                } else {
