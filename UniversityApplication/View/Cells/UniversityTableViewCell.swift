@@ -88,12 +88,16 @@ class UniversityTableViewCell: UITableViewCell {
     
     // Üniversitemizin favoriler listemizde olup olmadığını kontrol edip iconunu ayarlar
     
-    func isFavorite(){
-        if CoreDataManager.shared.fetchExample(withName: universityInfos?.name ?? "") != nil {
-               addFavoriteImageView.image = UIImage(systemName: "heart.fill")
-           } else {
-               addFavoriteImageView.image = UIImage(systemName: "heart")
-           }
+    func isFavorite() {
+        if let name = universityInfos?.name {
+            if CoreDataManager.shared.fetchExample(withName: name) != nil {
+                addFavoriteImageView.image = UIImage(systemName: "heart.fill")
+            } else {
+                addFavoriteImageView.image = UIImage(systemName: "heart")
+            }
+        } else {
+           print("University name is nil")
+        }
     }
     
     // Labellarımıza key-value şeklinde textini atama işlemini yapan fonksiyonumuz

@@ -21,6 +21,7 @@ class CitiesTableViewCell: UITableViewCell {
     private var webTitle:String?
     private var universityCount: Int = 0
     private var selectedRowIndex: Int?
+
     var isExpanded: Bool = false {
           didSet {
               plusImageView.image = isExpanded ? UIImage(systemName: "minus") : UIImage(systemName: "plus")
@@ -29,7 +30,10 @@ class CitiesTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         prepareTable()
+        
+       
     }
+   
     private func prepareTable(){
         universityTableView.delegate = self
         universityTableView.dataSource = self
@@ -53,6 +57,7 @@ class CitiesTableViewCell: UITableViewCell {
         hasUniversity()
         universityTableView.reloadData()
     }
+    
 }
 extension CitiesTableViewCell: UITableViewDataSource, UITableViewDelegate,UniversityTableViewCellDelegate {
     func didTapNumberButton(withNumber number: String) {
@@ -73,10 +78,12 @@ extension CitiesTableViewCell: UITableViewDataSource, UITableViewDelegate,Univer
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "UniversityTableViewCell", for: indexPath) as? UniversityTableViewCell else {
             return UITableViewCell()
         }
-            cell.configure(university: university!.universities[indexPath.row])
+        if let universityData=university?.universities{
+            cell.configure(university: universityData[indexPath.row])
             cell.delegate=self
             let isExpanded = indexPath.row == selectedRowIndex
             cell.isExpanded = isExpanded
+        }
         return cell
     }
 
@@ -96,21 +103,11 @@ extension CitiesTableViewCell: UITableViewDataSource, UITableViewDelegate,Univer
                 selectedRowIndex = nil
             } else {
                 selectedRowIndex = indexPath.row
+                
             }
         tableView.reloadData()
-
-     
-        
-        
-
     }
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        if let cell = tableView.cellForRow(at: indexPath) as? UniversityTableViewCell {
-            cell.isExpanded = false
-        }
-        tableView.beginUpdates()
-        tableView.endUpdates()
-    }
+  
 
 }
 

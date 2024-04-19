@@ -97,7 +97,6 @@ extension FavoritesScreenViewController:UITableViewDelegate,UITableViewDataSourc
            selectedUniversity.adress == "-" && selectedUniversity.email == "-" && selectedUniversity.fax == "-" && selectedUniversity.phone == "-"  && selectedUniversity.rector == "-" && selectedUniversity.website == "-" {
                return
            }
-        
         if viewModel.selectedRowIndex == indexPath.row {
             viewModel.selectedRowIndex = nil
             if let cell = tableView.cellForRow(at: indexPath) as? FavoritesTableViewCell {
@@ -112,13 +111,7 @@ extension FavoritesScreenViewController:UITableViewDelegate,UITableViewDataSourc
         tableView.reloadData()
    
     }
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        if let cell = tableView.cellForRow(at: indexPath) as? FavoritesTableViewCell {
-            cell.isExpanded = false
-        }
-        tableView.beginUpdates()
-        tableView.endUpdates()
-    }
+   
    
 
     

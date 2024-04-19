@@ -37,8 +37,7 @@ class HomeScreenViewController: UIViewController {
             }
         }
         
-        tableView.beginUpdates()
-        tableView.endUpdates()
+        tableView.reloadData()
     }
     private func prepareTable(){
         tableView.delegate=self
