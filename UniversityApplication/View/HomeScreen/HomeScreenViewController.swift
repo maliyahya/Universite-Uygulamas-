@@ -96,7 +96,9 @@ class HomeScreenViewController: UIViewController {
                         }
                     case .failure(_):
                         DispatchQueue.main.async {
+                            self.viewModel.pageNumber -= 1
                             self.showError(message: "Verileri çekerken bir hatayla karşılaşıldı")
+                            self.hideActivityIndicator()
                         }
                     }
                 }
