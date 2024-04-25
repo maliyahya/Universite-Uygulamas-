@@ -16,7 +16,6 @@ class UniversityTableViewCell: UITableViewCell {
     @IBOutlet weak var rectorLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     private var universityInfos:University?
-    private var selectedRowIndex: Int?
     var isExpanded: Bool = false {
           didSet {
               plusImageView.image = isExpanded ? UIImage(systemName: "minus") : UIImage(systemName: "plus")

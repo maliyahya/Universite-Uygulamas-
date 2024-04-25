@@ -64,18 +64,16 @@ class HomeScreenViewController: UIViewController {
         activityIndicator.startAnimating()
     }
     private func hideActivityIndicator(){
-        self.tableView.reloadData()
         self.activityIndicator.stopAnimating()
         self.activityIndicator.isHidden=true
     }
-  
-    
     func showError(message: String) {
         let alert = UIAlertController(title: "Hata", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Tamam", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
     }
-    //Sayfa sonuna geldiğimizde sıradaki sayfanın verilerini çekip tableımıza ekleyen fonksiyonumuz
+    
+    // Sayfa sonuna geldiğimizde sıradaki sayfanın verilerini çekip tableımıza ekleyen fonksiyonumuz
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offsetY = scrollView.contentOffset.y
@@ -92,6 +90,7 @@ class HomeScreenViewController: UIViewController {
                     case .success(let success):
                         self.viewModel.universities?.append(contentsOf: success.data)
                         DispatchQueue.main.async {
+                            self.tableView.reloadData()
                             self.hideActivityIndicator()
                         }
                     case .failure(_):
@@ -111,6 +110,7 @@ extension HomeScreenViewController: UITableViewDelegate, UITableViewDataSource,C
         return viewModel.universities?.count ?? 0
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CitiesTableViewCell", for: indexPath) as? CitiesTableViewCell else {
             return UITableViewCell()
         }
@@ -139,11 +139,13 @@ extension HomeScreenViewController: UITableViewDelegate, UITableViewDataSource,C
         } else {
             viewModel.selectedRowIndex = indexPath.row
         }
+
         
         tableView.reloadData()
         
         //Seçilen celle  göre ekranın kaydırılmasını sağlayan fonksiyonumuz
         if let selectedCell = tableView.cellForRow(at: indexPath) {
+            
                 let yOffset = selectedCell.frame.origin.y
                 if yOffset > 0 {
                     tableView.setContentOffset(CGPoint(x: 0, y: yOffset), animated: true)

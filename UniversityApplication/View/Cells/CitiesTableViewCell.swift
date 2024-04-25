@@ -78,8 +78,8 @@ extension CitiesTableViewCell: UITableViewDataSource, UITableViewDelegate,Univer
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "UniversityTableViewCell", for: indexPath) as? UniversityTableViewCell else {
             return UITableViewCell()
         }
-        if let universityData=university?.universities{
-            cell.configure(university: universityData[indexPath.row])
+        if let universityData=university?.universities[indexPath.row]{
+            cell.configure(university: universityData)
             cell.delegate=self
             let isExpanded = indexPath.row == selectedRowIndex
             cell.isExpanded = isExpanded
